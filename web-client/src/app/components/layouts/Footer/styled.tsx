@@ -11,10 +11,6 @@ export const StyledFooter = styled.footer`
   font-family: ${({ theme }) => theme.fonts.inter.regular};
   font-size: ${({ theme }) => theme.fonts.sizes.small};
   line-height: 1.5;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 
   ${media.min.lg`

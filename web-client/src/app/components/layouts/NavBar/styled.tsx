@@ -14,11 +14,10 @@ export const StyledNav = styled.nav`
   top: 0;
   z-index: 50;
   color: ${({ theme }) => theme.palette.text};
-
+  background-color: ${({ theme }) => theme.palette.background};
   #nav-links-list {
     display: none;
   }
-
   ${media.min.lg`
     padding: 0 3rem;
     #nav-links-list {
