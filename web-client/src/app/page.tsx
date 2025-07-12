@@ -1,6 +1,7 @@
 "use client";
 
 import NavBar from "./components/layouts/NavBar";
+import Footer from "./components/layouts/Footer/"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           This is a minimalistic clone of Daft Finder.
         </p>
       </main>
+      <Footer />
     </div>
   );
 }
