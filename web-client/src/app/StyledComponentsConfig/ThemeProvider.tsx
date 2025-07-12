@@ -3,6 +3,7 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyles';
+import { BREAKPOINTS } from './utils';
 
 const theme = {
   palette: {
@@ -28,16 +29,7 @@ const theme = {
       large: 'var(--large-font)',
     },
   },
-  breakpoints: {
-    xs: '480px',
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    '2xl': '1440px',
-    '3xl': '1600px',
-    '4xl': '1920px',
-  }
+  breakpoints: BREAKPOINTS, 
 };
 
 export default function ClientLayout({ children }: Readonly<{ children: ReactNode }>) {
