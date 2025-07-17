@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   --text: #FFFFFF;
   --textMuted: #CAD0D9;
   --surface: #1D2735;
+  --inputColor: #9CA3AF;
 
   --extra-small-font: 0.75rem; /* 0.75 rem = 12px */
   --small-font: 0.875rem; /* 0.875 rem = 14px */
@@ -46,6 +47,26 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+fieldset {
+  all: unset;
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+legend {
+  all: unset;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 `;
 

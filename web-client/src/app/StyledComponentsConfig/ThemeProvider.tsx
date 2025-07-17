@@ -15,6 +15,7 @@ const theme = {
     textMuted: 'var(--textMuted)',
     accent: 'var(--accent)',
     surface: 'var(--surface)',
+    inputColor: 'var(--inputColor)',
   },
   fonts: {
     inter: {
@@ -52,6 +53,7 @@ declare module 'styled-components' {
       textMuted: string;
       accent: string;
       surface: string;
+      inputColor: string;
     };
     fonts: {
       inter: {
