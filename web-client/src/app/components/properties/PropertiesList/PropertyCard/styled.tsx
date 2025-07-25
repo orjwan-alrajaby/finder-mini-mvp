@@ -67,33 +67,5 @@ export const SquareMeter = styled.p`
   font-size: ${props => props.theme.fonts.sizes.small};
   color: ${props => props.theme.palette.text};
   margin-top: 0.5rem;
-`;
-
-export const Specs = styled.dl`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 1.33rem;
-`;
-
-export const Spec = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-`;
-
-export const SpecIcon = styled.dt`
-  font-size: 1.2rem;
-`;
-
-export const SpecLabel = styled.span`
-  position: absolute;
-  left: -9999px;
-`;
-
-export const SpecValue = styled.dd`
-  font-family: ${props => props.theme.fonts.inter.regular};
-  font-weight: 400;
-  font-size: ${props => props.theme.fonts.sizes.small};
-  color: ${props => props.theme.palette.textMuted};
+  margin-bottom: 0.75rem;
 `;

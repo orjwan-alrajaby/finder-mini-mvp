@@ -7,7 +7,7 @@ export const dummyProperties = [
     bedrooms: 3,
     bathrooms: 2,
     garages: 1,
-    href: "/property/123-main-st",
+    href: "/properties/123-main-st",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -17,7 +17,7 @@ export const dummyProperties = [
     bedrooms: 2,
     bathrooms: 1,
     garages: 1,
-    href: "/property/45-oak-ln",
+    href: "/properties/45-oak-ln",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -27,7 +27,7 @@ export const dummyProperties = [
     bedrooms: 4,
     bathrooms: 3,
     garages: 2,
-    href: "/property/78-riverwalk",
+    href: "/properties/78-riverwalk",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -37,7 +37,7 @@ export const dummyProperties = [
     bedrooms: 3,
     bathrooms: 2,
     garages: 1,
-    href: "/property/19-seaside-blvd",
+    href: "/properties/19-seaside-blvd",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -47,7 +47,7 @@ export const dummyProperties = [
     bedrooms: 4,
     bathrooms: 2,
     garages: 2,
-    href: "/property/5-forest-hill",
+    href: "/properties/5-forest-hill",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -57,7 +57,7 @@ export const dummyProperties = [
     bedrooms: 3,
     bathrooms: 2,
     garages: 1,
-    href: "/property/34-glenview",
+    href: "/properties/34-glenview",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -67,7 +67,7 @@ export const dummyProperties = [
     bedrooms: 5,
     bathrooms: 3,
     garages: 2,
-    href: "/property/88-parkside",
+    href: "/properties/88-parkside",
   },
   {
     imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
@@ -77,6 +77,6 @@ export const dummyProperties = [
     bedrooms: 2,
     bathrooms: 1,
     garages: 1,
-    href: "/property/12-meadow",
+    href: "/properties/12-meadow",
   }
 ]

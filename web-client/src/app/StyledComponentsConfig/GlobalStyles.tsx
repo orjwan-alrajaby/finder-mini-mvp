@@ -12,10 +12,15 @@ const GlobalStyle = createGlobalStyle`
   --surface: #1D2735;
   --inputColor: #9CA3AF;
 
+  --accent-secondary: #3D7A81;
+  --accent-tertiary: #FC9231;
+
   --extra-small-font: 0.75rem; /* 0.75 rem = 12px */
   --small-font: 0.875rem; /* 0.875 rem = 14px */
   --medium-font: 1rem; /* 1 rem = 16px */
   --large-font: 1.25rem; /* 1.25 rem = 20px */
+  --extra-large-font: 1.5rem; /* 1.5 rem = 24px */
+  --xx-large-font: 1.75rem; /* 1.75 rem = 28px */
 }
 
 * {

@@ -14,6 +14,8 @@ const theme = {
     text: 'var(--text)',
     textMuted: 'var(--textMuted)',
     accent: 'var(--accent)',
+    accentSecondary: 'var(--accent-secondary)',
+    accentTertiary: 'var(--accent-tertiary)',
     surface: 'var(--surface)',
     inputColor: 'var(--inputColor)',
   },
@@ -28,6 +30,8 @@ const theme = {
       small: 'var(--small-font)',
       medium: 'var(--medium-font)',
       large: 'var(--large-font)',
+      extraLarge: 'var(--extra-large-font)',
+      xxLarge: 'var(--xx-large-font)',
     },
   },
   breakpoints: BREAKPOINTS, 
@@ -52,6 +56,8 @@ declare module 'styled-components' {
       text: string;
       textMuted: string;
       accent: string;
+      accentSecondary: string;
+      accentTertiary: string;
       surface: string;
       inputColor: string;
     };
@@ -66,6 +72,8 @@ declare module 'styled-components' {
         small: string;
         medium: string;
         large: string;
+        extraLarge: string;
+        xxLarge: string;
       };
     };
     breakpoints: {
