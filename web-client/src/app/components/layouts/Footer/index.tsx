@@ -4,6 +4,7 @@ import {AriaToolbarProps, useToolbar} from '@react-aria/toolbar'
 import { useRef } from 'react';
 import LogoLink from '../../ui/LogoLink';
 import { StyledFooter, StyledSection, StyledArticle, StyledList, StyledH4, StyledGroup, CopyRightsFootNote, PoweredByFootNote } from "./styled";
+import Image from "next/image";
 
 function LinksList({
   title,
@@ -33,8 +34,8 @@ export default function Footer() {
         <StyledGroup>
           <LogoLink />
           <StyledList>
-            <li><a href="mailto:contact@example.com">contact@example.com</a></li>
-            <li><a href="tel:+1 50 537 53 082">+1 50 537 53 082</a></li>
+            <li><Image src="/icons/mail.svg" alt="" width={16} height={16} /> <a href="mailto:contact@example.com">contact@example.com</a></li>
+            <li><Image src="/icons/phone.svg" alt="" width={16} height={16} /> <a href="tel:+1 50 537 53 082">+1 50 537 53 082</a></li>
           </StyledList>
         </StyledGroup>
         <LinksList 

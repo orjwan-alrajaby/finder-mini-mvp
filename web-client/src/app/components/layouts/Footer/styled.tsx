@@ -50,6 +50,13 @@ export const StyledList = styled.ul`
   padding: 0;
   margin: 0;
   margin-top: 1rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
 `
 const alignStyles = css`
   min-width: 200px;
