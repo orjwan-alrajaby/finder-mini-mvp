@@ -1,6 +1,8 @@
-export const dummyProperties = [
+import { PropertyProps } from "./types/properties";
+
+export const dummyProperties: PropertyProps[] = [
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/a.jpg",
     price: "€450,000",
     address: "123 Main Street, Dublin, Ireland",
     size: 120,
@@ -10,7 +12,7 @@ export const dummyProperties = [
     href: "/properties/123-main-st",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/b.jpg",
     price: "€375,000",
     address: "45 Oak Lane, Galway, Ireland",
     size: 95,
@@ -20,7 +22,7 @@ export const dummyProperties = [
     href: "/properties/45-oak-ln",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/c.jpg",
     price: "€610,000",
     address: "78 Riverwalk Drive, Cork, Ireland",
     size: 135,
@@ -30,7 +32,7 @@ export const dummyProperties = [
     href: "/properties/78-riverwalk",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/d.jpg",
     price: "€490,000",
     address: "19 Seaside Blvd, Wexford, Ireland",
     size: 110,
@@ -40,7 +42,7 @@ export const dummyProperties = [
     href: "/properties/19-seaside-blvd",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/e.jpg",
     price: "€520,000",
     address: "5 Forest Hill, Limerick, Ireland",
     size: 130,
@@ -50,7 +52,7 @@ export const dummyProperties = [
     href: "/properties/5-forest-hill",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/f.jpg",
     price: "€410,000",
     address: "34 Glenview Road, Kilkenny, Ireland",
     size: 105,
@@ -60,7 +62,7 @@ export const dummyProperties = [
     href: "/properties/34-glenview",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/g.jpg",
     price: "€580,000",
     address: "88 Parkside Avenue, Sligo, Ireland",
     size: 140,
@@ -70,7 +72,7 @@ export const dummyProperties = [
     href: "/properties/88-parkside",
   },
   {
-    imageUrl: "https://fastly.picsum.photos/id/106/400/400.jpg?hmac=eEZPxCkV47FG3BhZGEEkvju56UXv21b2QNtwjUqcNTc",
+    imageUrl: "/images/properties/h.jpg",
     price: "€360,000",
     address: "12 Meadow Lane, Waterford, Ireland",
     size: 92,
@@ -78,5 +80,5 @@ export const dummyProperties = [
     bathrooms: 1,
     garages: 1,
     href: "/properties/12-meadow",
-  }
-]
+  },
+];

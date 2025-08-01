@@ -6,7 +6,6 @@ export const StyledGridList = styled.section`
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-row-gap: 1.5rem;
-    padding: 1.5rem;
     width: 100%;
     max-width: 100%;
     ${media.min.sm`
@@ -17,7 +16,6 @@ export const StyledGridList = styled.section`
     ${media.min.lg`
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        padding: 3rem;
     `}
     ${media.min.xl`
         grid-template-columns: repeat(3, 1fr);

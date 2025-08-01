@@ -2,26 +2,24 @@
 
 import {PropertyCard} from './PropertyCard';
 import {StyledGridList} from './styled';
-import { TPropertyCardProps } from './types';
+import { dummyProperties } from '@/app/data';
 
-export default function PropertiesList({ properties }: Readonly<{properties: TPropertyCardProps[]}>) {
+export default function PropertiesList() {
     return (
-        <StyledGridList aria-label="Property Listings">
-          {properties.map((property) => ( 
-            <div key={property.address} className="property-card">
-                <PropertyCard
-                  key={property.address}
-                  imageUrl={property.imageUrl}
-                  price={property.price}
-                  address={property.address}
-                  size={property.size}
-                  bedrooms={property.bedrooms}
-                  bathrooms={property.bathrooms}
-                  garages={property.garages}
-                  href={property.href}
-                />
-            </div>
-          ))}
-        </StyledGridList>
+      <StyledGridList aria-label="Property Listings">
+        {dummyProperties.map((property) => ( 
+            <PropertyCard
+              key={property.address}
+              imageUrl={property.imageUrl}
+              price={property.price}
+              address={property.address}
+              size={property.size}
+              bedrooms={property.bedrooms}
+              bathrooms={property.bathrooms}
+              garages={property.garages}
+              href={property.href}
+            />
+        ))}
+      </StyledGridList>
     )
 }
