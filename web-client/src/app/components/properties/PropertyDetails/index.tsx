@@ -16,7 +16,7 @@ export default function PropertyDetails() {
          <StyledSection>
             <StyledArticle>
                 <StyledMainInfoSection>
-                    <TagList />
+                    <TagList tags={["for-sale", "verified", "featured", "new"]}/>
                     <StyledPrice className="price">$1.350</StyledPrice>
                     <StyledAddress>67-04 Myrtle Ave Glendale, NY 11385</StyledAddress>
                     <SpecsInfo bedrooms={5} bathrooms={2} garages={1} sqm={90} />

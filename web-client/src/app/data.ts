@@ -10,6 +10,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 2,
     garages: 1,
     href: "/properties/123-main-st",
+    tags: ["for-sale", "verified", "featured", "new"],
   },
   {
     imageUrl: "/images/properties/b.jpg",
@@ -20,6 +21,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 1,
     garages: 1,
     href: "/properties/45-oak-ln",
+    tags: ["for-rent", "new"],
   },
   {
     imageUrl: "/images/properties/c.jpg",
@@ -30,6 +32,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 3,
     garages: 2,
     href: "/properties/78-riverwalk",
+    tags: ["rent-to-own", "verified"],
   },
   {
     imageUrl: "/images/properties/d.jpg",
@@ -40,6 +43,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 2,
     garages: 1,
     href: "/properties/19-seaside-blvd",
+    tags: ["shared-accommodation", "featured"],
   },
   {
     imageUrl: "/images/properties/e.jpg",
@@ -50,6 +54,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 2,
     garages: 2,
     href: "/properties/5-forest-hill",
+    tags: ["for-auction", "new", "verified"],
   },
   {
     imageUrl: "/images/properties/f.jpg",
@@ -60,6 +65,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 2,
     garages: 1,
     href: "/properties/34-glenview",
+    tags: ["for-sale"],
   },
   {
     imageUrl: "/images/properties/g.jpg",
@@ -70,6 +76,7 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 3,
     garages: 2,
     href: "/properties/88-parkside",
+    tags: ["for-rent", "verified", "featured"],
   },
   {
     imageUrl: "/images/properties/h.jpg",
@@ -80,5 +87,6 @@ export const dummyProperties: PropertyProps[] = [
     bathrooms: 1,
     garages: 1,
     href: "/properties/12-meadow",
+    tags: ["shared-accommodation", "new"],
   },
 ];

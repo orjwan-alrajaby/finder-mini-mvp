@@ -18,6 +18,7 @@ export default function PropertiesList() {
               bathrooms={property.bathrooms}
               garages={property.garages}
               href={property.href}
+              tags={property.tags}
             />
         ))}
       </StyledGridList>

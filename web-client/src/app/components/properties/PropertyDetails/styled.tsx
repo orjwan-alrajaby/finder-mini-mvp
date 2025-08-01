@@ -4,12 +4,7 @@ import styled from "styled-components";
 export const StyledMainContainer = styled.div`
   width: 100%;
   max-width: 1296px;
-  padding: 5rem 1.5rem 10rem;
   margin: 0 auto;
-
-  ${media.min['2xl']`
-    margin: 5rem auto 10rem;
-  `}
 `
 
 export const StyledSection = styled.section`
