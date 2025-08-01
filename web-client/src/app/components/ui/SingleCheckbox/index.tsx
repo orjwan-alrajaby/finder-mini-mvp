@@ -1,32 +1,36 @@
 'use client';
 
+import { CheckboxProps } from 'react-aria-components';
 import {
-  CheckboxProps,
-} from 'react-aria-components';
-import { StyledBox, StyledCheckbox, StyledCheckmarkIcon, StyledContainer } from './styled';
+  StyledBox,
+  StyledCheckbox,
+  StyledCheckmarkIcon,
+  StyledContainer,
+} from './styled';
 
 export default function SingleCheckbox({
   children,
+  isDark,
   ...props
 }: Omit<CheckboxProps, 'children'> & {
   children?: React.ReactNode;
+  isDark?: boolean;
 }) {
-    
   return (
-    <StyledCheckbox {...props}>
-      {({ isSelected }) => {
-        return (
+    <StyledCheckbox $isDark={isDark} {...props}>
+      {({ isSelected }) => (
         <StyledContainer $isSelected={isSelected}>
           <StyledBox $isSelected={isSelected} className="checkbox">
-              {isSelected ? (
-                <StyledCheckmarkIcon src="/icons/checkmark.svg" alt="checkmark icon" fill={true} $isSelected={isSelected} />
-              ) : (
-                null
-              )}
+            <StyledCheckmarkIcon
+              src={isDark ? "/icons/checkmark-dark.svg" : "/icons/checkmark.svg"}
+              alt="checkmark icon"
+              fill
+              $isSelected={isSelected}
+            />
           </StyledBox>
           {children}
         </StyledContainer>
-      )}}
+      )}
     </StyledCheckbox>
   );
 }

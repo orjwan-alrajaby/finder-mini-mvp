@@ -15,7 +15,7 @@ export const StyledLabel = styled(AriaLabel)`
   display: block;
 `
 
-export const StyledSelectTrigger = styled(Button)`
+export const StyledSelectTrigger = styled(Button)<{$isDark: boolean}>`
     height: 2.5rem;
     padding: 0.75rem 1rem;
     width: 100%;
@@ -29,14 +29,15 @@ export const StyledSelectTrigger = styled(Button)`
     font-size: ${({ theme }) => theme.fonts.sizes.small};
     font-weight: 500;
     cursor: pointer;
+    background-color: ${({ theme, $isDark }) => $isDark ? theme.palette.primary : theme.palette.text};
 
-    .select-value-container {
+    .num-of-selected-keys {
         display: flex;
         gap: 0.75rem;
         align-items: center;
         padding-left: 8px;
+        color: ${({ theme, $isDark }) => $isDark ? theme.palette.textMuted : theme.palette.surface};
     }
-
 `
 
 export const StyledPlaceholderValue = styled.span`
@@ -46,25 +47,17 @@ export const StyledPlaceholderValue = styled.span`
     font-weight: 500;
 `
 
-export const StyledUnderlay = styled.div`
+export const StyledPopover = styled.div<{$isDark?: boolean}>`
     position: absolute;
-    top: 40px;
-    left: 0px;  
-    width: 100%;
-    background-color: ${({ theme }) => theme.palette.text};
-    z-index: 50;
-`
-
-export const StyledPopover = styled.div`
-    position: absolute;
-    background-color: ${({ theme }) => theme.palette.text};
+    background-color: ${({ theme, $isDark }) => $isDark ? theme.palette.primary : theme.palette.text};
     border: 1px solid;
     border-color: ${({ theme }) => theme.palette.inputColor};
-    top: 48px !important;
+    top: 3rem !important;
     left: 0px !important;
     border-radius: 4px;
     padding: 1rem;
     width: 100%;
+    z-index: 100;
 `
 
 export const StyledListBox = styled(ListBox)`
@@ -73,13 +66,13 @@ export const StyledListBox = styled(ListBox)`
     gap: 0.5rem;
 `
 
-export const StyledListBoxItem = styled(ListBoxItem)<{$isSelected: boolean}>`
+export const StyledListBoxItem = styled(ListBoxItem)<{$isSelected: boolean, $isDark?: boolean}>`
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     padding: 0.5rem 0;
-    color:  ${({theme, $isSelected}) => $isSelected ?  theme.palette.primary : theme.palette.inputColor};
+    color:  ${({theme, $isSelected, $isDark}) => $isSelected ? ($isDark ? theme.palette.text : theme.palette.surface) : theme.palette.inputColor};
     font-size: ${({ theme }) => theme.fonts.sizes.small};
     font-family: ${({ theme }) => theme.fonts.inter.medium};
     font-weight: 500;
@@ -95,9 +88,9 @@ export const StyledChipList = styled.span`
     text-overflow: ellipsis;
 `
 
-export const StyledChip = styled.span`
+export const StyledChip = styled.span<{$isDark?: boolean}>`
     color: ${({ theme }) => theme.palette.text};
-    background-color: ${({ theme }) => theme.palette.primary};
+    background-color: ${({ theme, $isDark }) => $isDark ? theme.palette.tertiary : theme.palette.surface};
     padding: 4px;
     padding: 4px 8px;
     font-size: ${({ theme }) => theme.fonts.sizes.extraSmall};
@@ -105,5 +98,4 @@ export const StyledChip = styled.span`
     width: fit-content;
     white-space: nowrap;
     text-align: left;
-
 `

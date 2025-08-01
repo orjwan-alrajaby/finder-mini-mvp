@@ -1,36 +1,46 @@
 'use client';
 
 import {
-    Checkbox as AriaCheckbox,
-  } from 'react-aria-components';
+  Checkbox as AriaCheckbox,
+} from 'react-aria-components';
 import Image from 'next/image';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const StyledCheckbox = styled(AriaCheckbox)`
-  --selected-color: ${({ theme }) => theme.palette.primary};
-  --selected-color-pressed: ${({ theme }) => theme.palette.tertiary};
-  --checkmark-color: ${({ theme }) => theme.palette.text};
-  --border-color: ${({ theme }) => theme.palette.primary};
-  
+const checkboxColorVars = css<{$isDark?: boolean}>`
+  ${({ theme, $isDark }) => {
+    const selectedColor = $isDark ? theme.palette.text : theme.palette.surface;
+    const borderColor = theme.palette.inputColor;
+    const selectedColorPressed = $isDark ? theme.palette.textMuted : theme.palette.tertiary;
+
+    return `
+      --selected-color: ${selectedColor};
+      --selected-color-pressed: ${selectedColorPressed};
+      --border-color: ${borderColor};
+    `;
+  }}
+`;
+
+export const StyledCheckbox = styled(AriaCheckbox)<{ $isDark?: boolean }>`
+  ${checkboxColorVars}
   &[data-selected][data-pressed] .checkbox,
   &[data-indeterminate][data-pressed] .checkbox {
     background: var(--selected-color-pressed);
     border-color: var(--selected-color-pressed);
-    }
-    
-    &[data-selected] .checkbox,
-    &[data-indeterminate] .checkbox {
-      background: var(--selected-color);
-      border-color: var(--selected-color);
-    }
+  }
+
+  &[data-selected] .checkbox,
+  &[data-indeterminate] .checkbox {
+    background: var(--selected-color);
+    border-color: var(--selected-color);
+  }
 `;
 
-export const StyledBox = styled.div<{$isSelected: boolean}>`
+export const StyledBox = styled.div<{ $isSelected: boolean }>`
   position: relative;
   width: 1rem;
   height: 1rem;
   border: 2px solid;
-  border-color: ${({ theme, $isSelected }) => $isSelected ? theme.palette.primary : theme.palette.inputColor};
+  border-color: var(--border-color);
   border-radius: 4px;
   transition: background 200ms, border-color 200ms;
 `;
@@ -44,12 +54,14 @@ export const StyledCheckmarkIcon = styled(Image)<{ $isSelected: boolean }>`
   pointer-events: none;
 `;
 
-export const StyledContainer = styled.div<{$isSelected: boolean}>`
+export const StyledContainer = styled.div<{ $isSelected: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-family: ${({ theme }) => theme.fonts.inter.regular};
   font-size: ${({ theme }) => theme.fonts.sizes.small};
-  font-weight: 400;
-  color: ${({ $isSelected, theme }) => $isSelected ? theme.palette.primary : theme.palette.inputColor};
-`
+  font-weight: ${({ $isSelected, theme }) => ($isSelected ? 500 : 400)};
+  color: ${({ $isSelected, theme }) =>
+    $isSelected ? theme.palette.surface : theme.palette.inputColor};
+  cursor: pointer;
+`;
