@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { StyledComponentsRegistry, ClientLayout } from '@/app/StyledComponentsConfig';
+import AppWrapper from './components/layouts/AppWrapper';
 
 const InterRegular = Inter({
   variable: '--font-inter-regular',
@@ -42,7 +43,11 @@ export default function RootLayout({
         className={`${InterRegular.variable} ${InterMedium.variable} ${InterSemiBold.variable}`}
       >
         <StyledComponentsRegistry>
-          <ClientLayout>{children}</ClientLayout>
+          <ClientLayout>
+            <AppWrapper>
+              {children}
+            </AppWrapper>
+            </ClientLayout>
         </StyledComponentsRegistry>
       </body>
     </html>
