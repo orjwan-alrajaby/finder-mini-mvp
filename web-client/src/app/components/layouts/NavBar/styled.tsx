@@ -2,24 +2,24 @@ import styled from "styled-components";
 import Link from "next/link";
 import { media } from "@/app/StyledComponentsConfig/utils";
 
-export const StyledNav = styled.nav`
+export const StyledNav = styled.nav<{ $maxWidth?: number }>`
   width: 100%;
-  height: 76px;
-  padding: 0 1.5rem;
+  height: 4.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 50;
   color: ${({ theme }) => theme.palette.text};
   background-color: ${({ theme }) => theme.palette.background};
+  max-width: ${({ $maxWidth }) => $maxWidth ? $maxWidth+"px" : "100%"};
+  margin: 0 auto;
+
   #nav-links-list {
     display: none;
-  }
+  };
   ${media.min.lg`
-    padding: 0 3rem;
     #nav-links-list {
       display: flex;
     }

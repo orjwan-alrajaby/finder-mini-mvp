@@ -1,13 +1,16 @@
 "use client";
 
 import {AriaToolbarProps, useToolbar} from '@react-aria/toolbar'
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
+import { useParams } from 'next/navigation';
 
 import { StyledNav, StyledList, StyledLink } from "./styled";
 import LogoLink from "../../ui/LogoLink";
 import BurgerMenu from "./BurgerMenu";
 
-const navLinks = [
+
+export default function NavBar() {
+  const navLinks = [
   { label: "Buy", href: "#" },
   { label: "Sell", href: "#" },
   { label: "Rent", href: "#" },
@@ -16,7 +19,6 @@ const navLinks = [
   { label: "Help center", href: "#" },
 ]
 
-export default function NavBar() {
   return (
     <ToolbarNav aria-label="navigation">
         <LogoLink />
@@ -35,9 +37,16 @@ export default function NavBar() {
 export function ToolbarNav(props: Readonly<ToolbarNavProps>) {
   let ref = useRef<HTMLDivElement | null>(null);
   let { toolbarProps } = useToolbar(props, ref);
+  const params = useParams();
+  const maxWidth = useMemo(() => { // TODO: maybe figure out a better way to handle this
+    if (params.id) {
+      return 1296;
+    }
+    return 1920;
+  }, [params.id]);
 
   return (
-    <StyledNav {...toolbarProps} ref={ref}>
+    <StyledNav {...toolbarProps} ref={ref} $maxWidth={maxWidth}>
       {props.children}
     </StyledNav>
   );
