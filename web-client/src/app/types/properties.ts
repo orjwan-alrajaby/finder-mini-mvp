@@ -20,4 +20,5 @@ export type PropertyProps = {
   bathrooms: number;
   garages: number;
   href: string;
+  tags: Tag[];
 };
