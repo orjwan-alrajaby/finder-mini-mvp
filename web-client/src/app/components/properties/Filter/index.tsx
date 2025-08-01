@@ -10,7 +10,9 @@ import {
   CloseButton,
   StyledH3,
   StyledGrid,
-  StyledInputGrid
+  StyledInputGrid,
+  StyledActionsBar,
+  ClearBtn
 } from './styled';
 import Image from 'next/image';
 import {
@@ -24,7 +26,8 @@ import {
 import CheckboxGroup from '../../ui/CheckboxGroup';
 import MultiSelectButtonGroup from '../../ui/MultiSelectButtons';
 import NumberRange from '../../ui/NumberRange';
-import SelectDropdown from '../../ui/SelectDropdown';
+import MultiSelectDropdown from '../../ui/MultiSelectDropdown';
+import Button from '../../ui/Button';
 
 export default function Filter() {
   const state = useOverlayTriggerState({});
@@ -69,7 +72,7 @@ export default function Filter() {
                     </CloseButton>
                   </DrawerHeader>
                   <StyledInputGrid>
-                  <SelectDropdown 
+                  <MultiSelectDropdown 
                       label="Location"
                       options={[
                         'Brooklyn, New York',
@@ -77,7 +80,7 @@ export default function Filter() {
                         'Downtown New York',
                       ]} 
                     />
-                  <SelectDropdown 
+                  <MultiSelectDropdown 
                   label="Listing Type"
                   options={[
                       'For Rent',
@@ -87,7 +90,7 @@ export default function Filter() {
                     ]} />
                   </StyledInputGrid>
                   <StyledInputGrid>
-                    <SelectDropdown 
+                    <MultiSelectDropdown 
                     label="Home Type"
                     options={[
                       'Apartment',
@@ -139,6 +142,12 @@ export default function Filter() {
                     ]}/>
                 </StyledGrid>
                 </DrawerContent>
+                <StyledActionsBar>
+                  <ClearBtn aria-label="Reset Dropdowns Filters">
+                    Clear all
+                  </ClearBtn>
+                  <Button label='Apply Filters' type="button" aria-label="Apply Filters" size="md" />
+                </StyledActionsBar>
               </Drawer>
             </FocusScope>
           </Backdrop>

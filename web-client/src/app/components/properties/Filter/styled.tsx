@@ -3,6 +3,7 @@ import {
   OverlayContainer,
 } from 'react-aria';
 import { media } from '@/app/StyledComponentsConfig/utils';
+import { Button } from 'react-aria-components';
 
 export const ToggleButton = styled.button`
   width: fit-content;
@@ -41,7 +42,9 @@ export const Drawer = styled.div<{ $isOpen: boolean }>`
 `;
 
 export const DrawerContent = styled.div`
+position: relative;
   padding: 2rem;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -93,3 +96,28 @@ export const StyledInputGrid = styled(StyledGrid)`
     row-gap: 2rem;
   `}
 `
+
+export const StyledActionsBar = styled.div`
+position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 2rem;
+  background-color: ${({ theme }) => theme.palette.text};
+  box-shadow: 0px 2px 8px rgba(17, 24, 39, 0.25);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+`;
+
+export const ClearBtn = styled(Button)`
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: ${({ theme }) => theme.palette.primary};
+  font-size: ${({ theme }) => theme.fonts.sizes.extraSmall};
+  font-family: ${({ theme }) => theme.fonts.inter.medium};
+  font-weight: 500;
+  max-width: fit-content;
+`;
