@@ -25,7 +25,7 @@ export const StyledToggleButton = styled(ToggleButton)`
 
   &[data-selected='true'],
   &[data-pressed='true'] {
-    background-color: ${({theme}) => theme.palette.primary};
+    background-color: ${({theme}) => theme.palette.surface};
     color: ${({theme}) => theme.palette.text};
   }
 
