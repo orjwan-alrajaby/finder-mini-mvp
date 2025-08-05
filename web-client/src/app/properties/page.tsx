@@ -1,11 +1,11 @@
 "use client";
 
-import PropertiesList from "@/app/components/properties/PropertiesList";
-import Filter from "@/app/components/properties/Filter";
+import PropertiesList from "@/components/properties/PropertiesList";
+import Filter from "@/components/properties/Filter";
 import styled from "styled-components";
-import SelectDropdown from "../components/ui/MultiSelectDropdown";
+import SelectDropdown from "../../components/ui/MultiSelectDropdown";
 import { Button } from "react-aria-components";
-import { media } from "../StyledComponentsConfig/utils";
+import { media } from "../../components/configs/StyledComponentsConfig/utils";
 
 const StyledHeader = styled.header` 
   display: flex;
