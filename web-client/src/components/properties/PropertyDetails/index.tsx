@@ -6,8 +6,8 @@ import AgentCard from "./AgentCard";
 import GeneralInfoSection from "./GeneralInfoSection";
 import AmenitiesSection from "./AmenitiesSection";
 import LocationSection from "./LocationSection";
-import TagList from "../../ui/TagList";
-import SpecsInfo from "../../ui/SpecsInfo";
+import TagList from "@/components/ui/TagList";
+import SpecsInfo from "@/components/ui/SpecsInfo";
 import Gallery from "./Gallery";
 
 export default function PropertyDetails() {

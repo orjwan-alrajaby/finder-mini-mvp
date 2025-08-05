@@ -5,7 +5,7 @@ import { useMemo, useRef } from 'react';
 import { useParams } from 'next/navigation';
 
 import { StyledNav, StyledList, StyledLink } from "./styled";
-import LogoLink from "../../ui/LogoLink";
+import LogoLink from "@/components/ui/LogoLink";
 import BurgerMenu from "./BurgerMenu";
 
 

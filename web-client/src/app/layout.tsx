@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { StyledComponentsRegistry, ClientLayout } from '@/components/configs/StyledComponentsConfig';
-import AppWrapper from '../components/layouts/AppWrapper';
+import AppWrapper from '@/components/layouts/AppWrapper';
 
 const InterRegular = Inter({
   variable: '--font-inter-regular',

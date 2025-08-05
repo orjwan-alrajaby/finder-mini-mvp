@@ -23,11 +23,11 @@ import {
   useDialog,
   FocusScope,
 } from 'react-aria';
-import CheckboxGroup from '../../ui/CheckboxGroup';
-import MultiSelectButtonGroup from '../../ui/MultiSelectButtons';
-import NumberRange from '../../ui/NumberRange';
-import MultiSelectDropdown from '../../ui/MultiSelectDropdown';
-import Button from '../../ui/Button';
+import CheckboxGroup from '@/components/ui/CheckboxGroup';
+import MultiSelectButtonGroup from '@/components/ui/MultiSelectButtons';
+import NumberRange from '@/components/ui/NumberRange';
+import MultiSelectDropdown from '@/components/ui/MultiSelectDropdown';
+import Button from '@/components/ui/Button';
 
 export default function Filter() {
   const state = useOverlayTriggerState({});

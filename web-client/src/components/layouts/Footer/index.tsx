@@ -2,7 +2,7 @@
 
 import {AriaToolbarProps, useToolbar} from '@react-aria/toolbar'
 import { useRef } from 'react';
-import LogoLink from '../../ui/LogoLink';
+import LogoLink from '@/components/ui/LogoLink';
 import { StyledFooter, StyledSection, StyledArticle, StyledList, StyledH4, StyledGroup, CopyRightsFootNote, PoweredByFootNote } from "./styled";
 import Image from "next/image";
 
