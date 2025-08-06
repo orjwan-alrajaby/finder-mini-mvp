@@ -32,7 +32,7 @@ export const EmblaSlide = styled.div`
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
-  background-color: ${({theme}) => theme.palette.tertiary};
+  background-color: ${({ theme }) => theme.palette.tertiary};
 `;
 
 export const EmblaButtons = styled.div`
@@ -85,10 +85,10 @@ export const EmblaDots = styled.div`
   align-items: center;
   gap: 1.25rem;
   margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
-    display: none;
+  display: none;
 `;
 
-export const EmblaDot = styled.button<{$isSelected: boolean}>`
+export const EmblaDot = styled.button<{ $isSelected: boolean }>`
   -webkit-tap-highlight-color: rgba(17, 24, 39, 0.5);
   -webkit-appearance: none;
   appearance: none;
@@ -105,7 +105,8 @@ export const EmblaDot = styled.button<{$isSelected: boolean}>`
   border-radius: 100%;
   border: none;
   box-shadow: 0px 2px 8px rgba(17, 24, 39, 0.3);
-  background-color: ${({ theme, $isSelected }) => $isSelected ? theme.palette.accent : theme.palette.text};
+  background-color: ${({ theme, $isSelected }) =>
+    $isSelected ? theme.palette.accent : theme.palette.text};
 `;
 
 export const EmblaControls = styled.div`
@@ -148,4 +149,4 @@ export const EmblaControls = styled.div`
       }
     }
   `}
-`
+`;

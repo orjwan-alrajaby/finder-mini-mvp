@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import {
-  OverlayContainer,
-} from 'react-aria';
+import { OverlayContainer } from 'react-aria';
 import { media } from '@/components/configs/StyledComponentsConfig/utils';
 
 export const ToggleButton = styled.button`
@@ -38,7 +36,8 @@ export const Drawer = styled.div<{ $isOpen: boolean }>`
   max-width: 20rem;
   background-color: ${({ theme }) => theme.palette.background};
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-  transform: ${({ $isOpen }) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({ $isOpen }) =>
+    $isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 60;
 `;
@@ -68,7 +67,7 @@ export const CloseButton = styled.button`
 export const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${({ theme }) => (theme.palette.text)};
+  background-color: ${({ theme }) => theme.palette.text};
 `;
 
 export const Nav = styled.nav``;
@@ -86,18 +85,19 @@ export const NavItem = styled.li<{ $active: boolean }>`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: ${({ theme, $active }) => ($active ? theme.palette.accent : 'transparent')};
-    padding: 4px 10px;
+  background-color: ${({ theme, $active }) =>
+    $active ? theme.palette.accent : 'transparent'};
+  padding: 4px 10px;
   border-radius: 4px;
-  box-shadow: ${({ theme, $active }) =>
-    $active
-      ? `0px 2px 8px rgba(216, 81, 81, 0.8)`
-      : 'none'};
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: ${({ $active }) =>
+    $active ? `0px 2px 8px rgba(216, 81, 81, 0.8)` : 'none'};
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 `;
 
 export const NavLink = styled.a<{ $active: boolean }>`
-  color: ${({ theme }) => (theme.palette.text)};
+  color: ${({ theme }) => theme.palette.text};
   font-size: 1.125rem;
   text-decoration: none;
   font-weight: ${({ $active }) => ($active ? '600' : '400')};

@@ -1,11 +1,11 @@
-import { media } from "@/components/configs/StyledComponentsConfig/utils";
-import styled from "styled-components";
+import { media } from '@/components/configs/StyledComponentsConfig/utils';
+import styled from 'styled-components';
 
 export const StyledMainContainer = styled.div`
   width: 100%;
   max-width: 1296px;
   margin: 0 auto;
-`
+`;
 
 export const StyledSection = styled.section`
   display: flex;
@@ -19,7 +19,7 @@ export const StyledSection = styled.section`
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1.5rem;
   `}
-`
+`;
 
 export const StyledArticle = styled.article`
   width: 100%;
@@ -30,8 +30,8 @@ export const StyledArticle = styled.article`
 
   ${media.min.lg`
     grid-column: 1/3;
-  `} 
-`
+  `}
+`;
 
 export const StyledMainInfoSection = styled.section`
   display: flex;
@@ -41,19 +41,19 @@ export const StyledMainInfoSection = styled.section`
   .price {
     margin-top: 0.25rem;
   }
-`
+`;
 
 export const StyledPrice = styled.h2`
-  color: ${({theme}) => theme.palette.text};
-  font-family: ${({theme}) => theme.fonts.inter.semibold};
+  color: ${({ theme }) => theme.palette.text};
+  font-family: ${({ theme }) => theme.fonts.inter.semibold};
   font-weight: 600;
-  font-size: ${({theme}) => theme.fonts.sizes.xxLarge};
-`
+  font-size: ${({ theme }) => theme.fonts.sizes.xxLarge};
+`;
 
 export const StyledAddress = styled.p`
-  font-family: ${props => props.theme.fonts.inter.regular};
+  font-family: ${(props) => props.theme.fonts.inter.regular};
   font-weight: 400;
-  font-size: ${props => props.theme.fonts.sizes.small};
+  font-size: ${(props) => props.theme.fonts.sizes.small};
 `;
 
 export const StyledSubSection = styled.div`
@@ -74,16 +74,16 @@ export const StyledSubSection = styled.div`
   ${media.min.lg`
     flex-direction: column;
   `}
-`
+`;
 
 export const StyledH3 = styled.h3`
-  color: ${({theme}) => theme.palette.text};
-  font-family: ${({theme}) => theme.fonts.inter.semibold};
+  color: ${({ theme }) => theme.palette.text};
+  font-family: ${({ theme }) => theme.fonts.inter.semibold};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fonts.sizes.large};
   margin-bottom: 1rem;
   min-width: fit-content;
-`
+`;
 
 export const StyledGenInfoSection = styled.section`
   ${media.min.xs`
@@ -94,11 +94,11 @@ export const StyledGenInfoSection = styled.section`
   ${media.min.lg`
     border-right: none;
   `}
-`
+`;
 
 export const StyledGenInfoH3 = styled(StyledH3)`
   margin-bottom: 0;
-`
+`;
 
 export const StyledTable = styled.table`
   width: 100%;
@@ -106,22 +106,22 @@ export const StyledTable = styled.table`
   max-width: 300px;
   text-align: left;
   border-spacing: 0 1rem;
-`
+`;
 
 export const StyledTH = styled.th`
-  color: ${({theme}) => theme.palette.text};
-  font-family: ${({theme}) => theme.fonts.inter.semibold};
+  color: ${({ theme }) => theme.palette.text};
+  font-family: ${({ theme }) => theme.fonts.inter.semibold};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fonts.sizes.medium};
   min-width: fit-content;
-`
+`;
 
 export const StyledAmenitiesGrid = styled.ul`
   list-style: none;
   padding: 0;
   display: grid;
   row-gap: 1rem;
-  
+
   ${media.min.md`
     grid-template-columns: repeat(2, minmax(180px, 1fr));
     column-gap: 1.5rem;
@@ -133,7 +133,7 @@ export const StyledMapPlaceholder = styled.div`
   max-width: 746px;
   height: 230px;
   border: 1px solid;
-  border-color: ${({theme}) => theme.palette.tertiary};
+  border-color: ${({ theme }) => theme.palette.tertiary};
   border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
@@ -146,7 +146,7 @@ export const StyledMapPlaceholder = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:rgba(17, 24, 39, 0.9);
+    background-color: rgba(17, 24, 39, 0.9);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -158,4 +158,3 @@ export const StyledMapPlaceholder = styled.div`
     height: 304px;
   `}
 `;
-

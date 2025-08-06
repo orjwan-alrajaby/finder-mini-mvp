@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledSpecs = styled.dl`
   display: flex;
@@ -18,8 +18,8 @@ export const StyledSpecLabel = styled.span`
 `;
 
 export const StyledSpecValue = styled.dd`
-  font-family: ${props => props.theme.fonts.inter.regular};
+  font-family: ${(props) => props.theme.fonts.inter.regular};
   font-weight: 400;
-  font-size: ${props => props.theme.fonts.sizes.small};
-  color: ${props => props.theme.palette.textMuted};
+  font-size: ${(props) => props.theme.fonts.sizes.small};
+  color: ${(props) => props.theme.palette.textMuted};
 `;

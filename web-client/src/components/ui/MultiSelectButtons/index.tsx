@@ -2,32 +2,35 @@
 
 import { useState } from 'react';
 import type { Key } from 'react-aria-components';
-import { StyledToggleButton, StyledToggleButtonGroup, StyledDiv, StyledLabel } from './styled';
+import {
+  StyledToggleButton,
+  StyledToggleButtonGroup,
+  StyledDiv,
+  StyledLabel,
+} from './styled';
 
-const options = [
-  "Any",
-  1, 
-  2, 
-  3, 
-  "4+", 
-]
+const options = ['Any', 1, 2, 3, '4+'];
 
 export default function MultiSelectButtonGroup({
   label,
 }: Readonly<{
   label: string;
 }>) {
-    let [selected, setSelected] = useState(new Set<Key>(['bold']));
+  const [selected, setSelected] = useState(new Set<Key>(['bold']));
 
   return (
     <StyledDiv>
       {label && <StyledLabel>{label}</StyledLabel>}
       <StyledToggleButtonGroup
-          selectionMode="multiple"
-          selectedKeys={selected}
-          onSelectionChange={setSelected}
+        selectionMode="multiple"
+        selectedKeys={selected}
+        onSelectionChange={setSelected}
       >
-        {options.map(opt => <StyledToggleButton key={opt} id={opt}>{opt}</StyledToggleButton>)}
+        {options.map((opt) => (
+          <StyledToggleButton key={opt} id={opt}>
+            {opt}
+          </StyledToggleButton>
+        ))}
       </StyledToggleButtonGroup>
     </StyledDiv>
   );

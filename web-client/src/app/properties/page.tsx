@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import PropertiesList from "@/components/properties/PropertiesList";
-import Filter from "@/components/properties/Filter";
-import styled from "styled-components";
-import SelectDropdown from "@/components/ui/MultiSelectDropdown";
-import { Button } from "react-aria-components";
-import { media } from "@/components/configs/StyledComponentsConfig/utils";
+import PropertiesList from '@/components/properties/PropertiesList';
+import Filter from '@/components/properties/Filter';
+import styled from 'styled-components';
+import SelectDropdown from '@/components/ui/MultiSelectDropdown';
+import { Button } from 'react-aria-components';
+import { media } from '@/components/configs/StyledComponentsConfig/utils';
 
-const StyledHeader = styled.header` 
+const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   padding-bottom: 1.5rem;
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
-`
+`;
 
 const StyledDropdownsContainer = styled.div`
   flex: 1;
@@ -44,7 +44,7 @@ const StyledDropdownsContainer = styled.div`
       max-width: 300px;
     }
   `};
-`
+`;
 
 export const ClearBtn = styled(Button)`
   background: none;
@@ -63,26 +63,26 @@ export default function Home() {
     <div>
       <StyledHeader>
         <StyledDropdownsContainer>
-          <SelectDropdown 
+          <SelectDropdown
             placeholder="Location"
             options={[
               'Brooklyn, New York',
               'Queens, New York',
               'Downtown New York',
-            ]} 
+            ]}
             isDark={true}
           />
-        <SelectDropdown 
-          placeholder="Listing Type"
-          options={[
+          <SelectDropdown
+            placeholder="Listing Type"
+            options={[
               'For Rent',
               'For Sale',
               'Rent-to-Own',
-              'Shared Accommodation'
+              'Shared Accommodation',
             ]}
-            isDark={true} 
+            isDark={true}
           />
-          <SelectDropdown 
+          <SelectDropdown
             placeholder="Home Type"
             options={[
               'Apartment',
@@ -91,17 +91,15 @@ export default function Home() {
               'Townhouse',
               'Duplex',
               'Loft',
-              'Condo'
+              'Condo',
             ]}
-            isDark={true} 
+            isDark={true}
           />
-          <ClearBtn aria-label="Reset Dropdowns Filters">
-            Clear all
-          </ClearBtn>
+          <ClearBtn aria-label="Reset Dropdowns Filters">Clear all</ClearBtn>
         </StyledDropdownsContainer>
         <Filter />
       </StyledHeader>
-        <PropertiesList />
+      <PropertiesList />
     </div>
   );
 }

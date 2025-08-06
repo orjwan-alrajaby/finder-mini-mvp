@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-  OverlayContainer,
-} from 'react-aria';
+import { OverlayContainer } from 'react-aria';
 import { media } from '@/components/configs/StyledComponentsConfig/utils';
 import { Button } from 'react-aria-components';
 
@@ -36,13 +34,14 @@ export const Drawer = styled.div<{ $isOpen: boolean }>`
   max-width: 51.25rem;
   background-color: ${({ theme }) => theme.palette.text};
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-  transform: ${({ $isOpen }) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({ $isOpen }) =>
+    $isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 60;
 `;
 
 export const DrawerContent = styled.div`
-position: relative;
+  position: relative;
   padding: 2rem;
   padding-bottom: 6rem;
   display: flex;
@@ -68,18 +67,18 @@ export const CloseButton = styled.button`
 `;
 
 export const StyledH3 = styled.h3`
-  font-family: ${({theme}) => theme.fonts.inter.semibold};
-  font-size: ${({theme}) => theme.fonts.sizes.large};
+  font-family: ${({ theme }) => theme.fonts.inter.semibold};
+  font-size: ${({ theme }) => theme.fonts.sizes.large};
   font-weight: 600;
-  color: ${({theme}) => theme.palette.primary};
-`
+  color: ${({ theme }) => theme.palette.primary};
+`;
 
 const StyledGridBase = css`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: auto;
   column-gap: 2rem;
-`
+`;
 
 export const StyledGrid = styled.div`
   ${StyledGridBase}
@@ -95,10 +94,10 @@ export const StyledInputGrid = styled(StyledGrid)`
     grid-template-columns: repeat(1, minmax(0, 1fr)); 
     row-gap: 2rem;
   `}
-`
+`;
 
 export const StyledActionsBar = styled.div`
-position: absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;

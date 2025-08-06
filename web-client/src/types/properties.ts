@@ -1,11 +1,11 @@
 export type ListingTag =
-  | "for-sale"
-  | "for-rent"
-  | "for-auction"
-  | "rent-to-own"
-  | "shared-accommodation";
+  | 'for-sale'
+  | 'for-rent'
+  | 'for-auction'
+  | 'rent-to-own'
+  | 'shared-accommodation';
 
-export type NonListingTag = "new" | "verified" | "featured";
+export type NonListingTag = 'new' | 'verified' | 'featured';
 
 export type Tag = ListingTag | NonListingTag;
 

@@ -1,6 +1,6 @@
-import { media } from "@/components/configs/StyledComponentsConfig/utils";
-import { Group } from "react-aria-components";
-import styled, { css } from "styled-components";
+import { media } from '@/components/configs/StyledComponentsConfig/utils';
+import { Group } from 'react-aria-components';
+import styled, { css } from 'styled-components';
 
 export const StyledFooter = styled.footer`
   width: 100%;
@@ -36,7 +36,7 @@ export const StyledSection = styled.section`
   `}
 
   justify-content: space-between;
-`
+`;
 export const StyledH4 = styled.h4`
   font-size: ${({ theme }) => theme.fonts.sizes.medium};
   color: ${({ theme }) => theme.palette.text};
@@ -56,28 +56,27 @@ export const StyledList = styled.ul`
     align-items: center;
     gap: 0.5rem;
   }
-
-`
+`;
 const alignStyles = css`
   min-width: 200px;
   text-align: left;
-`
+`;
 const typographyStyles = css`
- color: ${({ theme }) => theme.palette.text};
- font-size: ${({ theme }) => theme.fonts.sizes.medium};
- font-family: ${({ theme }) => theme.fonts.inter.regular};
-`
+  color: ${({ theme }) => theme.palette.text};
+  font-size: ${({ theme }) => theme.fonts.sizes.medium};
+  font-family: ${({ theme }) => theme.fonts.inter.regular};
+`;
 export const StyledArticle = styled.section`
- ${alignStyles}
-`
+  ${alignStyles}
+`;
 export const StyledGroup = styled(Group)`
- ${alignStyles};
- ${typographyStyles}
-`
+  ${alignStyles};
+  ${typographyStyles}
+`;
 export const CopyRightsFootNote = styled.p`
   ${typographyStyles};
   margin-bottom: 0.5rem;
-`
+`;
 export const PoweredByFootNote = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.extraSmall};
-`
+`;

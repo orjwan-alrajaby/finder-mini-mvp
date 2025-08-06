@@ -1,16 +1,16 @@
 'use client';
 
-import {
-  Checkbox as AriaCheckbox,
-} from 'react-aria-components';
+import { Checkbox as AriaCheckbox } from 'react-aria-components';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-const checkboxColorVars = css<{$isDark?: boolean}>`
+const checkboxColorVars = css<{ $isDark?: boolean }>`
   ${({ theme, $isDark }) => {
     const selectedColor = $isDark ? theme.palette.text : theme.palette.surface;
     const borderColor = theme.palette.inputColor;
-    const selectedColorPressed = $isDark ? theme.palette.textMuted : theme.palette.tertiary;
+    const selectedColorPressed = $isDark
+      ? theme.palette.textMuted
+      : theme.palette.tertiary;
 
     return `
       --selected-color: ${selectedColor};
@@ -42,7 +42,9 @@ export const StyledBox = styled.div<{ $isSelected: boolean }>`
   border: 2px solid;
   border-color: var(--border-color);
   border-radius: 4px;
-  transition: background 200ms, border-color 200ms;
+  transition:
+    background 200ms,
+    border-color 200ms;
 `;
 
 export const StyledCheckmarkIcon = styled(Image)<{ $isSelected: boolean }>`
@@ -50,7 +52,9 @@ export const StyledCheckmarkIcon = styled(Image)<{ $isSelected: boolean }>`
   height: 100%;
   opacity: ${({ $isSelected }) => ($isSelected ? 1 : 0)};
   transform: ${({ $isSelected }) => ($isSelected ? 'scale(1)' : 'scale(0.8)')};
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
   pointer-events: none;
 `;
 
@@ -60,7 +64,7 @@ export const StyledContainer = styled.div<{ $isSelected: boolean }>`
   gap: 0.75rem;
   font-family: ${({ theme }) => theme.fonts.inter.regular};
   font-size: ${({ theme }) => theme.fonts.sizes.small};
-  font-weight: ${({ $isSelected, theme }) => ($isSelected ? 500 : 400)};
+  font-weight: ${({ $isSelected }) => ($isSelected ? 500 : 400)};
   color: ${({ $isSelected, theme }) =>
     $isSelected ? theme.palette.surface : theme.palette.inputColor};
   cursor: pointer;

@@ -1,4 +1,4 @@
-import { css, keyframes } from "styled-components";
+import { css, keyframes } from 'styled-components';
 
 export const shimmer = keyframes`
   0% { background-position: -900px 0; }
@@ -6,7 +6,7 @@ export const shimmer = keyframes`
 `;
 
 export const getSkeletonStyle = (isDark: boolean = true) => css`
-background-color: #333D4C;
+  background-color: #333d4c;
   background-image: linear-gradient(
     90deg,
     transparent,

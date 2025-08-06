@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import {Button, Modal, ModalOverlay} from 'react-aria-components';
+import { Button, Modal, ModalOverlay } from 'react-aria-components';
 import { media } from '@/components/configs/StyledComponentsConfig/utils';
 
 const modalFade = keyframes`
@@ -79,17 +79,17 @@ export const StyledShowAllButton = styled(Button)`
   bottom: 16px;
   right: 16px;
   z-index: 40;
-  background-color: ${({theme}) => theme.palette.text};
+  background-color: ${({ theme }) => theme.palette.text};
   border-radius: 8px;
   height: 32px;
   padding: 8px 16px;
   border: none;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(17, 24, 39, 0.5);
-  font-family: ${({theme}) => theme.fonts.inter.medium};
+  font-family: ${({ theme }) => theme.fonts.inter.medium};
   font-weight: 500;
-  font-size: ${({theme}) => theme.fonts.sizes.extraSmall};
-  color:  ${({theme}) => theme.palette.primary};
+  font-size: ${({ theme }) => theme.fonts.sizes.extraSmall};
+  color: ${({ theme }) => theme.palette.primary};
 `;
 
 export const StyledCloseModalBtn = styled(Button)`
@@ -102,9 +102,9 @@ export const StyledCloseModalBtn = styled(Button)`
   width: 32px;
   height: 32px;
   border: none;
-  background-color: ${({theme}) => theme.palette.text};
+  background-color: ${({ theme }) => theme.palette.text};
   border-radius: 100%;
   box-shadow: 0px 2px 8px rgba(17, 24, 39, 0.3);
   z-index: 30;
   cursor: pointer;
-`
+`;

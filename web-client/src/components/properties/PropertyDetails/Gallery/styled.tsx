@@ -1,5 +1,5 @@
-import { media } from "@/components/configs/StyledComponentsConfig/utils";
-import styled, { css } from "styled-components";
+import { media } from '@/components/configs/StyledComponentsConfig/utils';
+import styled, { css } from 'styled-components';
 import { Button } from 'react-aria-components';
 
 export const StyledGalleryWrapper = styled.section`
@@ -10,7 +10,7 @@ export const StyledGalleryWrapper = styled.section`
   ${media.min.lg`
     grid-template-columns: 2fr 1fr;
   `}
-`
+`;
 
 const SharedMagnifyBtnIconStyles = css`
   ${media.min.md`
@@ -23,28 +23,28 @@ const SharedMagnifyBtnIconStyles = css`
       }
     }
   `}
-`
+`;
 
 export const StyledMainImageContainer = styled.div`
   grid-column: 1 / 2;
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
-`
+`;
 
 export const StyledMainFigure = styled.figure`
   aspect-ratio: 856 / 450;
   width: 100%;
   max-width: 856px;
   height: 100%;
-  
+
   .image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-  };
+  }
   ${SharedMagnifyBtnIconStyles};
-`
+`;
 
 export const StyledThumbnailColumn = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export const StyledThumbnailColumn = styled.div`
   ${media.min.lg`
     flex-direction: column;
   `}
-` 
+`;
 
 export const StyledThumbnailItem = styled.div`
   position: relative;
@@ -69,10 +69,9 @@ export const StyledThumbnailItem = styled.div`
     object-fit: cover;
     width: 100%;
     height: 100%;
-  };
+  }
   ${SharedMagnifyBtnIconStyles};
-`
-
+`;
 
 export const StyledZoomButton = styled(Button)`
   position: absolute;
@@ -82,10 +81,10 @@ export const StyledZoomButton = styled(Button)`
   left: 0;
   z-index: 30;
   cursor: pointer;
-  border: none;    
+  border: none;
   background-color: transparent;
 
   .magnify-icon {
     opacity: 0;
   }
-`
+`;

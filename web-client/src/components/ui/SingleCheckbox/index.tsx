@@ -22,7 +22,9 @@ export default function SingleCheckbox({
         <StyledContainer $isSelected={isSelected}>
           <StyledBox $isSelected={isSelected} className="checkbox">
             <StyledCheckmarkIcon
-              src={isDark ? "/icons/checkmark-dark.svg" : "/icons/checkmark.svg"}
+              src={
+                isDark ? '/icons/checkmark-dark.svg' : '/icons/checkmark.svg'
+              }
               alt="checkmark icon"
               fill
               $isSelected={isSelected}

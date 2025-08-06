@@ -1,6 +1,6 @@
-import {Key, usePopover} from 'react-aria';
-import {useOverlayTriggerState} from 'react-stately';
-import {useRef, useState} from 'react';
+import { Key, usePopover } from 'react-aria';
+import { useOverlayTriggerState } from 'react-stately';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import {
@@ -8,7 +8,7 @@ import {
   StyledLabel,
   StyledSelectTrigger,
   StyledPopover,
-  StyledListBox, 
+  StyledListBox,
   StyledListBoxItem,
   StyledPlaceholderValue,
   StyledChipList,
@@ -16,16 +16,16 @@ import {
 } from './styled';
 import SingleCheckbox from '../SingleCheckbox';
 
-export default function MultiSelectDropdown({ 
-  label, 
-  placeholder, 
-  options, 
-  isDark 
-}: Readonly<{ 
-  label?: string, 
-  placeholder?: string, 
-  options: string[], 
-  isDark?: boolean 
+export default function MultiSelectDropdown({
+  label,
+  placeholder,
+  options,
+  isDark,
+}: Readonly<{
+  label?: string;
+  placeholder?: string;
+  options: string[];
+  isDark?: boolean;
 }>) {
   const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set());
 
@@ -33,7 +33,7 @@ export default function MultiSelectDropdown({
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   const popoverRef = useRef<HTMLDivElement>(null);
-  const {popoverProps, underlayProps } = usePopover(
+  const { popoverProps, underlayProps } = usePopover(
     {
       popoverRef,
       triggerRef,
@@ -41,21 +41,30 @@ export default function MultiSelectDropdown({
     state
   );
 
-  const newPopoverProps = {...popoverProps, style: {}}
+  const newPopoverProps = { ...popoverProps, style: {} };
 
   return (
     <div className="select-dropdown">
       {label && <StyledLabel>{label}</StyledLabel>}
       <StyledContainer>
-        <StyledSelectTrigger onClick={state.toggle} ref={triggerRef} $isDark={!!(isDark)}>
-          {selectedKeys.size > 0  
-          
-            ? <StyledChipList>
-            {[...selectedKeys].map(key => <StyledChip $isDark={isDark} key={key}>
-              {key}
-              </StyledChip>)}
-              </StyledChipList>
-                : <StyledPlaceholderValue>{label ?? placeholder}</StyledPlaceholderValue>}
+        <StyledSelectTrigger
+          onClick={state.toggle}
+          ref={triggerRef}
+          $isDark={!!isDark}
+        >
+          {selectedKeys.size > 0 ? (
+            <StyledChipList>
+              {[...selectedKeys].map((key) => (
+                <StyledChip $isDark={isDark} key={key}>
+                  {key}
+                </StyledChip>
+              ))}
+            </StyledChipList>
+          ) : (
+            <StyledPlaceholderValue>
+              {label ?? placeholder}
+            </StyledPlaceholderValue>
+          )}
           <span className="num-of-selected-keys">
             {!!selectedKeys.size && <span> ({selectedKeys.size})</span>}
             <Image
@@ -84,9 +93,17 @@ export default function MultiSelectDropdown({
                 }}
               >
                 {options.map((opt) => (
-                  <StyledListBoxItem key={opt} id={opt} $isSelected={selectedKeys.has(opt)} $isDark={isDark}>
+                  <StyledListBoxItem
+                    key={opt}
+                    id={opt}
+                    $isSelected={selectedKeys.has(opt)}
+                    $isDark={isDark}
+                  >
                     <span>{opt}</span>
-                    <SingleCheckbox isSelected={selectedKeys.has(opt)} isDark={isDark} />
+                    <SingleCheckbox
+                      isSelected={selectedKeys.has(opt)}
+                      isDark={isDark}
+                    />
                   </StyledListBoxItem>
                 ))}
               </StyledListBox>

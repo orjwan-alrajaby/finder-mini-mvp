@@ -1,44 +1,44 @@
-"use client";
+'use client';
 
-import {AriaToolbarProps, useToolbar} from '@react-aria/toolbar'
+import { AriaToolbarProps, useToolbar } from '@react-aria/toolbar';
 import { useMemo, useRef } from 'react';
 import { useParams } from 'next/navigation';
 
-import { StyledNav, StyledList, StyledLink } from "./styled";
-import LogoLink from "@/components/ui/LogoLink";
-import BurgerMenu from "./BurgerMenu";
-
+import { StyledNav, StyledList, StyledLink } from './styled';
+import LogoLink from '@/components/ui/LogoLink';
+import BurgerMenu from './BurgerMenu';
 
 export default function NavBar() {
   const navLinks = [
-  { label: "Buy", href: "#" },
-  { label: "Sell", href: "#" },
-  { label: "Rent", href: "#" },
-  { label: "New Buildings", href: "#" },
-  { label: "Top agents", href: "#" },
-  { label: "Help center", href: "#" },
-]
+    { label: 'Buy', href: '#' },
+    { label: 'Sell', href: '#' },
+    { label: 'Rent', href: '#' },
+    { label: 'New Buildings', href: '#' },
+    { label: 'Top agents', href: '#' },
+    { label: 'Help center', href: '#' },
+  ];
 
   return (
     <ToolbarNav aria-label="navigation">
-        <LogoLink />
-        <BurgerMenu 
-          navItems={navLinks}
-        />
-        <StyledList id="nav-links-list">
-          {navLinks.map((link) => (
-            <li key={link.label}><StyledLink href={link.href}>{link.label}</StyledLink></li>
-          ))}
-        </StyledList>
+      <LogoLink />
+      <BurgerMenu navItems={navLinks} />
+      <StyledList id="nav-links-list">
+        {navLinks.map((link) => (
+          <li key={link.label}>
+            <StyledLink href={link.href}>{link.label}</StyledLink>
+          </li>
+        ))}
+      </StyledList>
     </ToolbarNav>
   );
 }
 
 export function ToolbarNav(props: Readonly<ToolbarNavProps>) {
-  let ref = useRef<HTMLDivElement | null>(null);
-  let { toolbarProps } = useToolbar(props, ref);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { toolbarProps } = useToolbar(props, ref);
   const params = useParams();
-  const maxWidth = useMemo(() => { // TODO: maybe figure out a better way to handle this
+  const maxWidth = useMemo(() => {
+    // TODO: maybe figure out a better way to handle this
     if (params.id) {
       return 1296;
     }
@@ -53,5 +53,5 @@ export function ToolbarNav(props: Readonly<ToolbarNavProps>) {
 }
 
 interface ToolbarNavProps extends AriaToolbarProps {
-    children?: React.ReactNode;
+  children?: React.ReactNode;
 }

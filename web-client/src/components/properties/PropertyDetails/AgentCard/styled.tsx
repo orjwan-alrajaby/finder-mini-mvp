@@ -1,16 +1,16 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const StyledAgentCard = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: ${({theme}) => theme.palette.surface};
+  background-color: ${({ theme }) => theme.palette.surface};
   border-radius: 8px;
   height: fit-content;
   width: 100%;
   max-width: 416px;
-`
+`;
 
 export const StyledAgentImage = styled.figure`
   width: 80px;
@@ -21,17 +21,17 @@ export const StyledAgentImage = styled.figure`
   max-height: 80px;
   overflow: hidden;
   border-radius: 100%;
-`
+`;
 
 export const StyledAgentCardHeader = styled.header`
   display: flex;
   align-items: center;
   gap: 1.5rem;
-`
+`;
 
 export const StyledAddress = styled.address`
   font-style: normal;
-`
+`;
 
 export const StyledContactMethods = styled.ul`
   list-style: none;
@@ -43,6 +43,6 @@ export const StyledContactMethods = styled.ul`
   }
 
   > li:first-child {
-   margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
   }
-`
+`;

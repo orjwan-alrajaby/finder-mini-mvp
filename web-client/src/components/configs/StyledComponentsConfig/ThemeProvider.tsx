@@ -34,10 +34,12 @@ const theme = {
       xxLarge: 'var(--xx-large-font)',
     },
   },
-  breakpoints: BREAKPOINTS, 
+  breakpoints: BREAKPOINTS,
 };
 
-export default function ClientLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function ClientLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -77,14 +79,14 @@ declare module 'styled-components' {
       };
     };
     breakpoints: {
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
+      'xs': string;
+      'sm': string;
+      'md': string;
+      'lg': string;
+      'xl': string;
       '2xl': string;
       '3xl': string;
       '4xl': string;
-    }
+    };
   }
 }
