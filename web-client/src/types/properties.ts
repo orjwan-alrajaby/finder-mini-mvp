@@ -21,7 +21,20 @@ export type PropertyProps = {
     thumbnail: string;
     gallery: string[];
   };
+  advertiserId: string;
+  about: string;
   price: string;
+  size: number;
+  floor: number;
+  bedrooms: number;
+  bathrooms: number;
+  garages: number;
+  homeType: HomeType;
+  flags: Flag[];
+  listingType?: ListingType;
+  yearBuilt: number;
+  amenities: string[];
+  petsAllowed: string[];
   location: {
     address: string;
     city: string;
@@ -32,16 +45,21 @@ export type PropertyProps = {
       longitude: number;
     };
   };
-  size: number;
-  bedrooms: number;
-  bathrooms: number;
-  garages: number;
-  homeType: HomeType;
-  flags: Flag[];
-  listingType?: ListingType;
-  yearBuilt: number;
-  amenities: string[];
-  petsAllowed: string[];
 };
 
 export type PropertiesProps = PropertyProps[];
+
+export type AdvertiserProps = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  advertiserType: string;
+  bookingLink: string;
+  company: string;
+  avatar: {
+    thumbnail: string | null; // TODO: remove null when this is resolved
+    url: string;
+  };
+};

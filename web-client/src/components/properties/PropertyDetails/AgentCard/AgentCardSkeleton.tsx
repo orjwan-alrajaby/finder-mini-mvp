@@ -6,7 +6,7 @@ import {
 } from '@/components/layouts/Skeleton/base';
 import { StyledAgentCard } from './styled';
 
-export default function SkeletonAgentCard({
+export default function AgentCardSkeleton({
   isDark = true,
 }: Readonly<{ isDark?: boolean }>) {
   return (
