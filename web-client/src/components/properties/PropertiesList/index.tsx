@@ -1,24 +1,17 @@
-'use client';
-
 import { PropertyCard } from './PropertyCard';
 import { StyledGridList } from './styled';
-import { dummyProperties } from '@/data';
+import { useSuspenseQuery } from '@tanstack/react-query';
+import { getAllPropertiesOptions } from '@/services/queries/properties';
 
 export default function PropertiesList() {
+  const { data: properties } = useSuspenseQuery(getAllPropertiesOptions);
+
   return (
     <StyledGridList aria-label="Property Listings">
-      {dummyProperties.map((property) => (
+      {properties.map((property) => (
         <PropertyCard
-          key={property.address}
-          imageUrl={property.imageUrl}
-          price={property.price}
-          address={property.address}
-          size={property.size}
-          bedrooms={property.bedrooms}
-          bathrooms={property.bathrooms}
-          garages={property.garages}
-          href={property.href}
-          tags={property.tags}
+          key={property.id}
+          {...property}
         />
       ))}
     </StyledGridList>

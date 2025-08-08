@@ -1,6 +1,3 @@
-'use client'; // TODO: explore making this a server component.
-// The styles for this page using the theme object is what's breaking the code if I remove the "use client" flag;
-
 import {
   StyledMainContainer,
   StyledSection,
@@ -19,19 +16,26 @@ import TagList from '@/components/ui/TagList';
 import SpecsInfo from '@/components/ui/SpecsInfo';
 import Gallery from './Gallery';
 
-export default function PropertyDetails() {
+import { useSuspenseQuery } from '@tanstack/react-query';
+import { getPropertyByIdOptions } from '@/services/queries/properties';
+
+export default function PropertyDetails({ propertyId }: Readonly<{ propertyId: string }>) {
+  const { data: property } = useSuspenseQuery(getPropertyByIdOptions(propertyId));
+  const fullAddress = `${property.location.address}, ${property.location.city}, ${property.location.country}`;
+
   return (
     <StyledMainContainer>
-      <Gallery />
+      <Gallery gallery={property.images.gallery} />
       <StyledSection>
         <StyledArticle>
           <StyledMainInfoSection>
-            <TagList tags={['for-sale', 'verified', 'featured', 'new']} />
-            <StyledPrice className="price">$1.350</StyledPrice>
-            <StyledAddress>67-04 Myrtle Ave Glendale, NY 11385</StyledAddress>
-            <SpecsInfo bedrooms={5} bathrooms={2} garages={1} sqm={90} />
+            <TagList flags={property.flags} listingType={property.listingType} />
+            <StyledPrice className="price">{property.price}</StyledPrice>
+            <StyledAddress>{fullAddress}</StyledAddress>
+            <SpecsInfo bedrooms={property.bedrooms} bathrooms={property.bathrooms} garages={property.garages} sqm={property.size} />
           </StyledMainInfoSection>
           <section>
+            {/* Add Description Field to Data */}
             <StyledH3>About</StyledH3>
             <p>
               It offers a comfortable living area leading to a formal dining
@@ -45,8 +49,16 @@ export default function PropertyDetails() {
             </p>
           </section>
           <StyledSubSection>
-            <GeneralInfoSection />
-            <AmenitiesSection />
+            <GeneralInfoSection
+              propertyType={property.homeType}
+              yearBuilt={property.yearBuilt}
+              bathrooms={property.bathrooms}
+              bedrooms={property.bedrooms}
+              floor={3}
+              livingArea={property.size}
+              garages={property.garages}
+            />
+            <AmenitiesSection amenities={property.amenities} />
           </StyledSubSection>
           <LocationSection />
         </StyledArticle>

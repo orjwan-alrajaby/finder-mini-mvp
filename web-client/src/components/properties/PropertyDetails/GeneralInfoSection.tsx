@@ -1,3 +1,4 @@
+import { HomeType } from '@/types/properties';
 import {
   StyledGenInfoSection,
   StyledGenInfoH3,
@@ -5,17 +6,33 @@ import {
   StyledTH,
 } from './styled';
 
-const generalInfo = [
-  { label: 'Property Type', value: 'Apartment' },
-  { label: 'Year Built', value: '2023' },
-  { label: 'Living Area', value: '42 sq.m' },
-  { label: 'Floor', value: '3' },
-  { label: 'Total Rooms', value: '2' },
-  { label: 'Bedrooms', value: '1' },
-  { label: 'Bathrooms', value: '1' },
-];
-
-export default function GeneralInfoSection() {
+export default function GeneralInfoSection({
+  propertyType,
+  yearBuilt,
+  livingArea,
+  floor,
+  bedrooms,
+  bathrooms,
+  garages,
+}: Readonly<{
+  propertyType: HomeType;
+  yearBuilt: number;
+  livingArea: number;
+  floor: number;
+  bedrooms: number;
+  bathrooms: number;
+  garages: number;
+}>) {
+  const generalInfo = [
+    { label: 'Property Type', value: propertyType },
+    { label: 'Year Built', value: yearBuilt },
+    { label: 'Living Area', value: `${livingArea} sqm` },
+    { label: 'Floor', value: floor },
+    { label: 'Bedrooms', value: bedrooms },
+    { label: 'Bathrooms', value: bathrooms },
+    { label: 'Garages', value: garages },
+    { label: 'Total Rooms', value: bedrooms + bathrooms + garages },
+  ];
   return (
     <StyledGenInfoSection>
       <StyledGenInfoH3>General Information</StyledGenInfoH3>

@@ -15,23 +15,27 @@ import Image from 'next/image';
 import SpecsInfo from '@/components/ui/SpecsInfo';
 import TagList from '@/components/ui/TagList';
 import { PropertyProps } from '@/types/properties';
+import { PROPERTIES_ROUTES } from '@/constants/routes';
 
 export const PropertyCard: React.FC<PropertyProps> = ({
-  imageUrl,
+  id,
+  images: { thumbnail },
   price,
-  address,
+  location,
   size,
   bedrooms,
   bathrooms,
   garages,
-  href,
-  tags,
+  flags,
+  listingType
 }) => {
   const isFavorite = false;
   const isLocationActive = false;
+
+  const fullAddress = `${location.address}, ${location.city}, ${location.country}`
   return (
     <Card
-      aria-label={`Property at ${address}`}
+      aria-label={`Property at ${fullAddress}`}
       $isLocationActive={isLocationActive}
     >
       <StyledFavoriteBtn
@@ -51,20 +55,20 @@ export const PropertyCard: React.FC<PropertyProps> = ({
       </StyledFavoriteBtn>
       <ImageWrapper>
         <Image
-          src={imageUrl}
-          alt={`Exterior view of the house at ${address}`}
+          src={thumbnail}
+          alt={`Exterior view of the house at ${fullAddress}`}
           fill
         />
         <CardLink
-          href={href}
-          aria-label={`View details for property at ${address}`}
+          href={PROPERTIES_ROUTES.singleProperty(id)}
+          aria-label={`View details for property at ${fullAddress}`}
         />
       </ImageWrapper>
       <Details>
-        <TagList tags={tags} />
+        <TagList flags={flags} listingType={listingType} />
         <Header>
           <Price>{price}</Price>
-          <Address>{address}</Address>
+          <Address>{fullAddress}</Address>
           <SquareMeter>{size} sq.m</SquareMeter>
         </Header>
         <SpecsInfo

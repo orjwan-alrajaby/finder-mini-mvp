@@ -5,6 +5,7 @@ import {
   ClientLayout,
 } from '@/components/configs/StyledComponentsConfig';
 import AppWrapper from '@/components/layouts/AppWrapper';
+import QueryClientProvider from '@/components/configs/TanstackQueryConfig/ClientQueryProvider';
 
 const InterRegular = Inter({
   variable: '--font-inter-regular',
@@ -47,7 +48,9 @@ export default function RootLayout({
       >
         <StyledComponentsRegistry>
           <ClientLayout>
-            <AppWrapper>{children}</AppWrapper>
+            <QueryClientProvider>
+              <AppWrapper>{children}</AppWrapper>
+            </QueryClientProvider>
           </ClientLayout>
         </StyledComponentsRegistry>
       </body>

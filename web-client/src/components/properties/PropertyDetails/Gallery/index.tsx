@@ -12,12 +12,6 @@ import {
 import Modal from '@/components/properties/PropertyDetails/Gallery/Modal';
 import { useState } from 'react';
 
-const imageSlides = [
-  '/images/property-1/a.jpg',
-  '/images/property-1/b.jpg',
-  '/images/property-1/c.jpg',
-];
-
 function ZoomButton({ onClick }: Readonly<{ onClick: () => void }>) {
   return (
     <StyledZoomButton className="magnify-img-btn" onClick={onClick}>
@@ -32,14 +26,14 @@ function ZoomButton({ onClick }: Readonly<{ onClick: () => void }>) {
   );
 }
 
-export default function Gallery() {
+export default function Gallery({ gallery }: Readonly<{ gallery: string[] }>) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImgIndex, setSelectedImgIndex] = useState(0);
   return (
     <StyledGalleryWrapper>
       <StyledMainImageContainer>
         <StyledMainFigure>
-          <Image src={imageSlides[0]} alt="" fill className="image" />
+          <Image src={gallery[0]} alt="" fill className="image" />
           <ZoomButton
             onClick={() => {
               setSelectedImgIndex(0);
@@ -51,7 +45,7 @@ export default function Gallery() {
       <StyledThumbnailColumn>
         <StyledThumbnailItem>
           <figure>
-            <Image src={imageSlides[1]} alt="" fill className="image" />
+            <Image src={gallery[1]} alt="" fill className="image" />
           </figure>
           <ZoomButton
             onClick={() => {
@@ -62,7 +56,7 @@ export default function Gallery() {
         </StyledThumbnailItem>
         <StyledThumbnailItem>
           <figure>
-            <Image src={imageSlides[2]} alt="" fill className="image" />
+            <Image src={gallery[2]} alt="" fill className="image" />
           </figure>
           <ZoomButton
             onClick={() => {
@@ -74,6 +68,7 @@ export default function Gallery() {
             isOpen={isModalOpen}
             setIsOpen={setIsModalOpen}
             selectedImgIndex={selectedImgIndex}
+            gallery={gallery}
           />
         </StyledThumbnailItem>
       </StyledThumbnailColumn>

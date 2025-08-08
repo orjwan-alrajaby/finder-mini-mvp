@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import SelectDropdown from '@/components/ui/MultiSelectDropdown';
 import { Button } from 'react-aria-components';
 import { media } from '@/components/configs/StyledComponentsConfig/utils';
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import { getAllPropertiesOptions } from '@/services/queries/properties';
+import { getQueryClient } from "@/components/configs/TanstackQueryConfig/getClientQuery"
 
 const StyledHeader = styled.header`
   display: flex;
@@ -58,7 +61,10 @@ export const ClearBtn = styled(Button)`
   max-width: fit-content;
 `;
 
-export default function Home() {
+export default function PropertiesPage() {
+  const queryClient = getQueryClient();
+  void queryClient.prefetchQuery(getAllPropertiesOptions);
+
   return (
     <div>
       <StyledHeader>
@@ -99,7 +105,9 @@ export default function Home() {
         </StyledDropdownsContainer>
         <Filter />
       </StyledHeader>
-      <PropertiesList />
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <PropertiesList />
+      </HydrationBoundary>
     </div>
   );
 }

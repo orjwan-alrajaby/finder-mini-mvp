@@ -1,24 +1,47 @@
-export type ListingTag =
-  | 'for-sale'
-  | 'for-rent'
-  | 'for-auction'
-  | 'rent-to-own'
-  | 'shared-accommodation';
+export type ListingType =
+  | 'For Sale'
+  | 'For Rent'
+  | 'For Auction'
+  | 'Rent-to-Own'
+  | 'Shared Accommodation';
 
-export type NonListingTag = 'new' | 'verified' | 'featured';
+export type Flag = 'New' | 'Verified' | 'Featured';
 
-export type Tag = ListingTag | NonListingTag;
-
-export type TagsList = Tag[];
+export type HomeType =
+  | 'Independent Residence'
+  | 'Studio'
+  | 'Apartment'
+  | 'Townhouse'
+  | 'Condo'
+  | 'Duplex';
 
 export type PropertyProps = {
-  imageUrl: string;
+  id: string;
+  images: {
+    thumbnail: string;
+    gallery: string[];
+  };
   price: string;
-  address: string;
+  location: {
+    address: string;
+    city: string;
+    country: string;
+    coordinates?: {
+      // TODO: handle this when Google Maps API is integrated
+      latitude: number;
+      longitude: number;
+    };
+  };
   size: number;
   bedrooms: number;
   bathrooms: number;
   garages: number;
-  href: string;
-  tags: Tag[];
+  homeType: HomeType;
+  flags: Flag[];
+  listingType?: ListingType;
+  yearBuilt: number;
+  amenities: string[];
+  petsAllowed: string[];
 };
+
+export type PropertiesProps = PropertyProps[];

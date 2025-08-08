@@ -1,18 +1,8 @@
 import { StyledAmenitiesGrid, StyledH3 } from './styled';
 
-const amenities = [
-  'WiFi',
-  'Dishwasher',
-  'Air conditioning',
-  'Parking place',
-  'Laundry',
-  'Gym',
-  'Security cameras',
-  'No smoking',
-  'Pets allowed',
-];
-
-export default function AmenitiesSection() {
+export default function AmenitiesSection({
+  amenities
+}: Readonly<{ amenities: string[] }>) {
   return (
     <section>
       <StyledH3>Amenities</StyledH3>
