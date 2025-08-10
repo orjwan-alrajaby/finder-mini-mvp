@@ -22,6 +22,9 @@ import { getQueryClient } from '@/components/configs/TanstackQueryConfig/getClie
 
 export default function PropertyDetails({ propertyId }: Readonly<{ propertyId: string }>) {
   const { data: property } = useSuspenseQuery(getPropertyByIdOptions(propertyId));
+
+  console.log('property', property)
+
   const fullAddress = `${property.location.address}, ${property.location.city}, ${property.location.country}`;
 
   const queryClient = getQueryClient();

@@ -1,3 +1,5 @@
+import { PaginatedData } from './api';
+
 export type ListingType =
   | 'For Sale'
   | 'For Rent'
@@ -63,3 +65,5 @@ export type AdvertiserProps = {
     url: string;
   };
 };
+
+export type PaginatedProperties = PaginatedData<PropertiesProps>;

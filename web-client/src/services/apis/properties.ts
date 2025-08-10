@@ -1,12 +1,12 @@
 import axiosInstance from '@/services/config/axiosInstance';
 import {
-  PropertiesProps,
+  PaginatedProperties,
   PropertyProps,
   AdvertiserProps,
 } from '@/types/properties';
 import { PROPERTIES_ENDPOINTS } from '@/constants/endpoints';
 
-export async function getAllProperties(): Promise<PropertiesProps> {
+export async function getAllProperties(): Promise<PaginatedProperties> {
   const response = await axiosInstance.get(
     PROPERTIES_ENDPOINTS.getAllProperties
   );
