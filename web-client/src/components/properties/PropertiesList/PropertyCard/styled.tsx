@@ -41,7 +41,7 @@ export const StyledFavoriteBtn = styled(Button)`
   box-shadow: 0px 2px 8px rgba(17, 24, 39, 0.3);
 `;
 
-export const StyledMapBtn = styled(Button)<{ $isLocationActive?: boolean }>`
+export const StyledMapBtn = styled(Button) <{ $isLocationActive?: boolean }>`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -63,6 +63,7 @@ export const ImageWrapper = styled.figure`
   padding-top: 75%;
   overflow: hidden;
   position: relative;
+  background-color: ${({ theme }) => theme.palette.surface};
 `;
 
 export const Details = styled.div`
