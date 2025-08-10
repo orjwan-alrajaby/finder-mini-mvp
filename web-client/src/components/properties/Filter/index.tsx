@@ -9,23 +9,22 @@ import {
   DrawerHeader,
   CloseButton,
   StyledH3,
-  StyledGrid,
-  StyledInputGrid,
   StyledActionsBar,
   ClearBtn,
 } from './styled';
 import Image from 'next/image';
 import { useOverlayTriggerState } from '@react-stately/overlays';
 import { useModalOverlay, useDialog, FocusScope } from 'react-aria';
-import CheckboxGroup from '@/components/ui/CheckboxGroup';
-import MultiSelectButtonGroup from '@/components/ui/MultiSelectButtons';
-import NumberRange from '@/components/ui/NumberRange';
-import MultiSelectDropdown from '@/components/ui/MultiSelectDropdown';
 import Button from '@/components/ui/Button';
+import FirstSection from './FirstSection';
+import SecondSection from './SecondSection';
+import ThirdSection from './ThirdSection';
+import useFilterStore from '@/stores/filter';
 
 export default function Filter() {
   const state = useOverlayTriggerState({});
   const ref = useRef<HTMLDivElement>(null);
+  const clearAll = useFilterStore((state) => state.clearAll);
 
   const { modalProps, underlayProps } = useModalOverlay(
     {
@@ -75,84 +74,12 @@ export default function Filter() {
                   />
                 </CloseButton>
               </DrawerHeader>
-              <StyledInputGrid>
-                <MultiSelectDropdown
-                  label="Location"
-                  options={[
-                    'Brooklyn, New York',
-                    'Queens, New York',
-                    'Downtown New York',
-                  ]}
-                />
-                <MultiSelectDropdown
-                  label="Listing Type"
-                  options={[
-                    'For Rent',
-                    'For Sale',
-                    'Rent-to-Own',
-                    'Shared Accommodation',
-                  ]}
-                />
-              </StyledInputGrid>
-              <StyledInputGrid>
-                <MultiSelectDropdown
-                  label="Home Type"
-                  options={[
-                    'Apartment',
-                    'House',
-                    'Studio',
-                    'Townhouse',
-                    'Duplex',
-                    'Loft',
-                    'Condo',
-                  ]}
-                />
-                <NumberRange title="Price per month, $" />
-              </StyledInputGrid>
-              <StyledInputGrid>
-                <NumberRange title="Square metres" />
-                <NumberRange title="Year built" />
-              </StyledInputGrid>
-              <StyledInputGrid>
-                <MultiSelectButtonGroup label="Bedrooms" />
-                <MultiSelectButtonGroup label="Bathrooms" />
-              </StyledInputGrid>
-              <CheckboxGroup
-                label="Amenities"
-                options={[
-                  { label: 'Air conditioning', value: 'air conditioning' },
-                  { label: 'Pool', value: 'pool' },
-                  { label: 'Balcony', value: 'balcony' },
-                  { label: 'Security cameras', value: 'security cameras' },
-                  { label: 'Garage', value: 'garage' },
-                  { label: 'WiFi', value: 'wifi' },
-                  { label: 'Gym', value: 'gym' },
-                  { label: 'Laundry', value: 'laundry' },
-                  { label: 'Parking', value: 'parking' },
-                  { label: 'Dishwasher', value: 'dishwasher' },
-                ]}
-              />
-              <StyledGrid>
-                <CheckboxGroup
-                  label="Pets"
-                  options={[
-                    { label: 'Cats allowed', value: 'cats allowed' },
-                    { label: 'Dogs allowed', value: 'dogs allowed' },
-                  ]}
-                />
-                <CheckboxGroup
-                  label="Additional options"
-                  options={[
-                    { label: 'Verified', value: 'verified' },
-                    { label: 'New', value: 'new' },
-                    { label: 'Upcoming', value: 'upcoming' },
-                    { label: 'Popular', value: 'popular' },
-                  ]}
-                />
-              </StyledGrid>
+              <FirstSection />
+              <SecondSection />
+              <ThirdSection />
             </DrawerContent>
             <StyledActionsBar>
-              <ClearBtn aria-label="Reset Dropdowns Filters">
+              <ClearBtn aria-label="Reset Dropdowns Filters" onClick={clearAll}>
                 Clear all
               </ClearBtn>
               <Button

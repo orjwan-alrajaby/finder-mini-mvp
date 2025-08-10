@@ -5,13 +5,17 @@ import { StyledCheckboxGroup, StyledList, StyledLabel } from './styled';
 import SingleCheckbox from '../SingleCheckbox';
 
 interface CheckboxGroupProps extends Omit<AriaCheckboxGroupProps, 'children'> {
-  options: { label: string; value: string }[];
+  options: string[];
   label?: string;
+  checkedOptions: string[];
+  onChange: (checkedOptions: string[]) => void;
 }
 
 export default function CheckboxGroup({
   label,
   options,
+  checkedOptions = [],
+  onChange,
   ...props
 }: Readonly<CheckboxGroupProps>) {
   const maxRows = 5;
@@ -20,12 +24,12 @@ export default function CheckboxGroup({
   const numOfCols = Math.ceil(numOptions / maxRows);
 
   return (
-    <StyledCheckboxGroup {...props}>
+    <StyledCheckboxGroup {...props} onChange={onChange} value={checkedOptions}>
       {label && <StyledLabel>{label}</StyledLabel>}
       <StyledList $numOfCols={numOfCols}>
-        {options.map((opt, index) => (
-          <SingleCheckbox key={opt.label + index} value={opt.value}>
-            {opt.label}
+        {options.map((opt) => (
+          <SingleCheckbox key={opt} value={opt}>
+            {opt}
           </SingleCheckbox>
         ))}
       </StyledList>

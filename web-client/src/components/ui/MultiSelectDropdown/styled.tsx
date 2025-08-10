@@ -20,7 +20,7 @@ export const StyledLabel = styled(AriaLabel)`
   display: block;
 `;
 
-export const StyledSelectTrigger = styled(Button)<{ $isDark: boolean }>`
+export const StyledSelectTrigger = styled(Button) <{ $isDark: boolean }>`
   height: 2.5rem;
   padding: 0.75rem 1rem;
   width: 100%;
@@ -43,7 +43,7 @@ export const StyledSelectTrigger = styled(Button)<{ $isDark: boolean }>`
     align-items: center;
     padding-left: 8px;
     color: ${({ theme, $isDark }) =>
-      $isDark ? theme.palette.textMuted : theme.palette.surface};
+    $isDark ? theme.palette.textMuted : theme.palette.surface};
   }
 `;
 
@@ -74,7 +74,7 @@ export const StyledListBox = styled(ListBox)`
   gap: 0.5rem;
 `;
 
-export const StyledListBoxItem = styled(ListBoxItem)<{
+export const StyledListBoxItem = styled(ListBoxItem) <{
   $isSelected: boolean;
   $isDark?: boolean;
 }>`

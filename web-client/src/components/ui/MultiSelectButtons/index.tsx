@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import type { Key } from 'react-aria-components';
 import {
   StyledToggleButton,
@@ -13,10 +12,17 @@ const options = ['Any', 1, 2, 3, '4+'];
 
 export default function MultiSelectButtonGroup({
   label,
+  selected,
+  setSelected,
 }: Readonly<{
   label: string;
+  selected: Key[];
+  setSelected: (keys: Key[]) => void;
 }>) {
-  const [selected, setSelected] = useState(new Set<Key>(['bold']));
+
+  const handleSetSelected = (keys: Set<Key>) => {
+    setSelected([...keys])
+  };
 
   return (
     <StyledDiv>
@@ -24,7 +30,7 @@ export default function MultiSelectButtonGroup({
       <StyledToggleButtonGroup
         selectionMode="multiple"
         selectedKeys={selected}
-        onSelectionChange={setSelected}
+        onSelectionChange={handleSetSelected}
       >
         {options.map((opt) => (
           <StyledToggleButton key={opt} id={opt}>

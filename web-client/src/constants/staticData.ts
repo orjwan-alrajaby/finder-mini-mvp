@@ -1,0 +1,160 @@
+export const sampleLocations = [
+  'Drogheda',
+  'Dublin',
+  'Wexford',
+  'Limerick',
+  'cork',
+];
+
+export const locations = [
+  { address: '778 Main Street', city: 'Drogheda', country: 'Ireland' },
+  { address: '308 Bridge Street', city: 'Waterford', country: 'Ireland' },
+  { address: '587 High Street', city: 'Dublin', country: 'Ireland' },
+  { address: '524 Ashbourne Road', city: 'Wexford', country: 'Ireland' },
+  { address: '419 Harbour Quay', city: 'Wexford', country: 'Ireland' },
+  { address: '976 Park Avenue', city: 'Wexford', country: 'Ireland' },
+  { address: '585 College Lane', city: 'Dublin', country: 'Ireland' },
+  { address: '833 Riverwalk Drive', city: 'Dublin', country: 'Ireland' },
+  { address: '818 Oak Drive', city: 'Limerick', country: 'Ireland' },
+  { address: '297 North Circular Road', city: 'Dublin', country: 'Ireland' },
+  { address: '716 College Green', city: 'Wexford', country: 'Ireland' },
+  { address: '617 Beechfield Avenue', city: 'Wexford', country: 'Ireland' },
+  { address: '312 Highgrove Way', city: 'Drogheda', country: 'Ireland' },
+  { address: '77 College Road', city: 'Sligo', country: 'Ireland' },
+  { address: '54 Oakfield Terrace', city: 'Sligo', country: 'Ireland' },
+  { address: '613 St. Brendan’s Road', city: 'Kilkenny', country: 'Ireland' },
+  { address: '457 The Crescent', city: 'Galway', country: 'Ireland' },
+  { address: '59 Rathmines Road', city: 'Athlone', country: 'Ireland' },
+  { address: '373 Summerhill Lane', city: 'Galway', country: 'Ireland' },
+  { address: '433 Church Avenue', city: 'Sligo', country: 'Ireland' },
+  { address: '45 Church Lane', city: 'Drogheda', country: 'Ireland' },
+  { address: '510 High Street', city: 'Dublin', country: 'Ireland' },
+  { address: '904 Stoneybatter Way', city: 'Dublin', country: 'Ireland' },
+  { address: '596 Rosemount Drive', city: 'Cork', country: 'Ireland' },
+  { address: '716 Bridge Street', city: 'Sligo', country: 'Ireland' },
+  { address: '271 Maple Road', city: 'Wexford', country: 'Ireland' },
+  { address: '567 Station Street', city: 'Waterford', country: 'Ireland' },
+  { address: '773 Glenview Park', city: 'Limerick', country: 'Ireland' },
+  { address: '782 Ballybunion Crescent', city: 'Sligo', country: 'Ireland' },
+  { address: '146 Kingswood Road', city: 'Clonmel', country: 'Ireland' },
+  { address: '398 Willow Rise', city: 'Ennis', country: 'Ireland' },
+  { address: '904 Glenabbey Walk', city: 'Navan', country: 'Ireland' },
+  { address: '112 Eden Gate Avenue', city: 'Greystones', country: 'Ireland' },
+  { address: '88 Donaghmede Road', city: 'Dublin', country: 'Ireland' },
+  { address: '242 Foxrock Close', city: 'Dublin', country: 'Ireland' },
+  { address: '639 Blackrock Lane', city: 'Dundalk', country: 'Ireland' },
+  { address: '305 Marina View', city: 'Bray', country: 'Ireland' },
+  { address: '71 Carrigaline Avenue', city: 'Cork', country: 'Ireland' },
+  { address: '128 Loughboy Road', city: 'Kilkenny', country: 'Ireland' },
+  { address: '462 Riverbank Way', city: 'Tullamore', country: 'Ireland' },
+  {
+    address: '374 Silverstream Drive',
+    city: 'Letterkenny',
+    country: 'Ireland',
+  },
+  { address: '91 Cherryhill View', city: 'Longford', country: 'Ireland' },
+  { address: '310 Moyne Park', city: 'Galway', country: 'Ireland' },
+  { address: '48 Deerpark Road', city: 'Newbridge', country: 'Ireland' },
+  { address: '219 Hazelbrook Rise', city: 'Maynooth', country: 'Ireland' },
+  { address: '500 Riverstone Avenue', city: 'Killarney', country: 'Ireland' },
+  { address: '722 Ivy Hill', city: 'Tralee', country: 'Ireland' },
+  { address: '66 Bishop’s Walk', city: 'Arklow', country: 'Ireland' },
+  { address: '342 Saint James’s Park', city: 'Portlaoise', country: 'Ireland' },
+  { address: '57 Castleknock Road', city: 'Dublin', country: 'Ireland' },
+  {
+    address: '18 Sandymount Road',
+    city: 'Dublin',
+    district: 'Sandymount',
+    country: 'Ireland',
+  },
+  {
+    address: '203 Manor Street',
+    city: 'Dublin',
+    district: 'Stoneybatter',
+    country: 'Ireland',
+  },
+  {
+    address: '44 Seafield Road',
+    city: 'Clontarf',
+    district: 'East Wall',
+    country: 'Ireland',
+  },
+  {
+    address: '92 Ranelagh Village',
+    city: 'Dublin',
+    district: 'Ranelagh',
+    country: 'Ireland',
+  },
+  {
+    address: '17 The Crescent',
+    city: 'Limerick',
+    district: 'Dooradoyle',
+    country: 'Ireland',
+  },
+  {
+    address: '85 Fr. Matthew Street',
+    city: 'Cork',
+    district: 'Shandon',
+    country: 'Ireland',
+  },
+  {
+    address: '15 Boherbee Lane',
+    city: 'Tralee',
+    district: 'Boherbee',
+    country: 'Ireland',
+  },
+  {
+    address: '328 Ardkeen Drive',
+    city: 'Waterford',
+    district: 'Ardkeen',
+    country: 'Ireland',
+  },
+  {
+    address: '7 Ballybrit Avenue',
+    city: 'Galway',
+    district: 'Ballybrit',
+    country: 'Ireland',
+  },
+  {
+    address: '49 Parliament Street',
+    city: 'Dublin',
+    district: 'Temple Bar',
+    country: 'Ireland',
+  },
+];
+
+export const listingType = [
+  'For Rent',
+  'For Sale',
+  'Rent-to-Own',
+  'Shared Accommodation',
+];
+
+export const homeType = [
+  'Apartment',
+  'House',
+  'Studio',
+  'Townhouse',
+  'Duplex',
+  'Loft',
+  'Condo',
+];
+
+export const numOfBedroomsAndBathrooms = ['Any', 1, 2, 3, '4+'];
+
+export const pets = ['Dogs', 'Cats'];
+
+export const tags = ['Featured', 'Verified', 'New'];
+
+export const amenities = [
+  'Dishwasher',
+  'Air conditioning',
+  'Gym',
+  'Parking',
+  'Balcony',
+  'Laundry',
+  'Garage',
+  'WiFi',
+  'Security cameras',
+  'Pool',
+];

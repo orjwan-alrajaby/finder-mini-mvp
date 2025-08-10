@@ -9,7 +9,7 @@ export const StyledDiv = styled.div`
   font-size: ${({ theme }) => theme.fonts.sizes.small};
 `;
 
-export const StyledNumberField = styled(Input)`
+export const StyledNumberInput = styled(Input)`
   color: ${({ theme }) => theme.palette.primary};
   font-size: ${({ theme }) => theme.fonts.sizes.small};
   font-weight: 500;

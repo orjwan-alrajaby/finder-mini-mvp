@@ -1,6 +1,6 @@
 import { Key, usePopover } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 
 import {
@@ -21,14 +21,16 @@ export default function MultiSelectDropdown({
   placeholder,
   options,
   isDark,
+  selectedKeys = [],
+  setSelectedKeys
 }: Readonly<{
   label?: string;
   placeholder?: string;
   options: string[];
   isDark?: boolean;
+  selectedKeys: Key[],
+  setSelectedKeys: (keys: Key[]) => void;
 }>) {
-  const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set());
-
   const state = useOverlayTriggerState({});
   const triggerRef = useRef<HTMLButtonElement>(null);
 
@@ -52,7 +54,7 @@ export default function MultiSelectDropdown({
           ref={triggerRef}
           $isDark={!!isDark}
         >
-          {selectedKeys.size > 0 ? (
+          {selectedKeys?.length > 0 ? (
             <StyledChipList>
               {[...selectedKeys].map((key) => (
                 <StyledChip $isDark={isDark} key={key}>
@@ -66,7 +68,7 @@ export default function MultiSelectDropdown({
             </StyledPlaceholderValue>
           )}
           <span className="num-of-selected-keys">
-            {!!selectedKeys.size && <span> ({selectedKeys.size})</span>}
+            {!!selectedKeys?.length && <span> ({selectedKeys?.length})</span>}
             <Image
               src="/icons/down-arrow.svg"
               width={14}
@@ -88,7 +90,7 @@ export default function MultiSelectDropdown({
                 selectedKeys={selectedKeys}
                 onSelectionChange={(keys) => {
                   if (keys instanceof Set) {
-                    setSelectedKeys(keys);
+                    setSelectedKeys([...keys]);
                   }
                 }}
               >
@@ -96,12 +98,12 @@ export default function MultiSelectDropdown({
                   <StyledListBoxItem
                     key={opt}
                     id={opt}
-                    $isSelected={selectedKeys.has(opt)}
+                    $isSelected={selectedKeys.includes(opt)}
                     $isDark={isDark}
                   >
                     <span>{opt}</span>
                     <SingleCheckbox
-                      isSelected={selectedKeys.has(opt)}
+                      isSelected={selectedKeys.includes(opt)}
                       isDark={isDark}
                     />
                   </StyledListBoxItem>
